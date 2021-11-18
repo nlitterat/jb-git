@@ -24,5 +24,7 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: ls taget
+      run: ls target/*
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag jb-git:$(date +%s)
